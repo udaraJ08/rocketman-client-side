@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rocketman</title>
+  </head>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+  />
+
+  <link
+    rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+  />
+
+  <!-- importing fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lobster&display=swap"
+    rel="stylesheet"
+  />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Sulphur+Point&display=swap"
+    rel="stylesheet"
+  />
+
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.1.js"></script>
+
+  <!-- linking custom css -->
+  <link rel="stylesheet" href="./css/normalize.css" />
+  <link rel="stylesheet" href="./css/home.css" />
+  <body>
+    <div class="hero-header center justify-content-start">
+      <div class="hero-header-mid center">
+        <i class="fas fa-rocket display-6 text-light"></i>
+        <h1 class="text-center">
+          "Safety is our number <br />
+          one priority"
+        </h1>
+        <br />
+        <p>-Rocketman-</p>
+      </div>
+    </div>
+    <nav class="bg-primary d-flex justify-content-between">
+      <section id="hamburgur" class="center">
+        <i class="fas fa-bars"></i>
+      </section>
+      <section class="nav-brand d-flex">
+        <section class="w-25 bg-dark center">
+          <img
+            src="./assets/icons/shuttle.png"
+            id="brand-ico"
+            width="40%"
+            alt=""
+          />
+        </section>
+        <section class="w-75 center justify-content-start text-light">
+          <h1>Rocketman</h1>
+        </section>
+      </section>
+      <section class="nav-section">
+        <section class="nav-item center">HOME</section>
+        <section class="nav-item center flex-column" id="btnLogin">
+          <i
+            class="nav-ico far fa-user-circle text-light display-6"
+            data-toggle="modal"
+            data-target="#mdlLogin"
+          ></i>
+          LOGIN
+        </section>
+        <section class="nav-item center flex-column" id="btnSignup">
+          <i
+            class="nav-ico fas fa-user-plus text-light display-6"
+            data-toggle="modal"
+            data-target="#mdlRegistration"
+          ></i>
+          SIGNUP
+        </section>
+        <section class="nav-item center flex-column" id="btnUserProfile">
+          <i class="fas fa-user-ninja display-6"
+          data-toggle="modal"
+          data-target="#mdlUserProfile"
+          >
+          </i>
+          USER
+        </section>
+        <section class="nav-item center" id="btnLogOut">
+          <i class="nav-ico fas fa-sign-out-alt display-6 text-danger"></i>
+        </section>
+      </section>
+    </nav>
+    <br />
+    <br />
+    <br />
+    <div class="body-container center">
+      <div class="body-mid-container">
+        <div class="welcome-sec center">
+          <section class="welcome-sec-left">
+            <section class="wlc-left-upper center">
+              <h3>Why Choose <span>Rocketman</span> ?</h3>
+            </section>
+            <section class="wlc-left-lower center">
+              <p class="text-center">
+                With over 30 years of experience in the industry, we strive to
+                offer the highest levels of customer service and a highly
+                personalised service to all our customers who are on the lookout
+                for Sri Lanka car rental opportunities. With one of the largest
+                and most modern and varied fleets in Sri Lanka, our service is
+                backed by a networked front office, fully-fledged mechanical
+                servicing and valet servicing onsite.
+              </p>
+            </section>
+          </section>
+          <section class="welcome-sec-right center">
+            <img
+              id="imgAroundTheWorld"
+              src="./assets/images/undraw_startman1_h7l9.svg"
+              width="50%"
+              alt=""
+            />
+          </section>
+        </div>
+      </div>
+    </div>
+    <br />
+    <div class="services-sec">
+      <section class="service-tab center flex-column">
+        <h1 class="text-light">Our Sevices</h1>
+        <p class="text-light text-center">
+          We Provide various and customizable <br />
+          services for our beloved customers.
+        </p>
+        <br />
+        <i class="fas fa-charging-station display-6 text-warning"></i>
+      </section>
+      <section class="service-tab center">
+        <br />
+        <br />
+        &nbsp;
+        <h3 class="">Self Drive</h3>
+      </section>
+      <section class="service-tab center">
+        <br />
+        <br />
+        &nbsp;
+        <h3 class="">With Driver</h3>
+      </section>
+      <section class="service-tab center">
+        <br />
+        <br />
+        &nbsp;
+        <h3 class="">Vacations</h3>
+      </section>
+    </div>
+    <br><br>
+    <br><br>
+    <div class="fleet-container center flex-column ">
+      <h1 class="text-center center flex-column" style="  font-family: 'Lobster', cursive;
+      ">Our Vehicle Fleet</h1>
+      <br><br>
+      <div class="fleet-mid-container flex-wrap">
+      </div>
+    </div>
+  </body>
+
+  <footer class="bg-primary center">
+    <section class="footer-mid center flex-column ">
+      <!-- <i class="fas ft-ico fa-rocket text-dark"></i> -->
+      <br>
+      <p class="lead text-light">contact us for more details</p>
+      <section>
+        <i class="fab social-ico fa-whatsapp-square"></i>
+        &nbsp;&nbsp;<i class="fab social-ico fa-facebook-square"></i>
+        &nbsp;&nbsp;<i class="fab social-ico fa-viber"></i>
+        &nbsp;&nbsp;<i class="fab social-ico fa-instagram-square"></i>
+        &nbsp;&nbsp;<i class="fas social-ico fa-envelope-open-text"></i>
+      </section>
+      <br>
+      <p class="small text-light">+94321245659</p>
+      <p class="small text-light">rocketman@gmail.com</p>
+    </section>
+  </footer>
+
+  <!-- registration modal start -->
+  <div
+    class="modal fade"
+    id="mdlRegistration"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="signupModal"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-xl" role="document">
+      <div class="modal-content bg-primary">
+        <section class="modal-header bg-primary">
+          <h4 class="text-light">
+            <i class="vh-ico fas fa-user-plus text-warning"></i>
+            USER SIGNUP
+          </h4>
+        </section>
+        <div class="signup-model center">
+          <div class="signup-model-mid center bg-light">
+            <div class="sp-mld-mid-left">
+              <section class="sp-lft-upper center">
+                <img
+                  src="./assets/images/self drive.svg"
+                  width="80%"
+                  alt=""
+                  id="imgSignup"
+                />
+              </section>
+              <section class="sp-lft-lower d-flex align-items-start center">
+                <h3>Drive safe with us...</h3>
+              </section>
+            </div>
+            <div class="sp-mld-mid-right">
+              <section class="sp-right-upper center justify-content-start">
+                <section class="sp-rght-md-form">
+                  <form class="flex-column h-100" id="frmCustomerRegistration">
+                    <div class="form-group mb-3">
+                      <label for="inptCustomerNIC"
+                        >&star;&nbsp; Customer NIC</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control pb"
+                        id="inptCustomerNIC"
+                        name="customerNIC"
+                      />
+                    </div>
+                    <div class="form-group mb-3">
+                      <label for="inptCustomerName"
+                        >&star;&nbsp; Customer Name</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="inptCustomerName"
+                        name="customerName"
+                      />
+                    </div>
+                    <div class="form-group mb-3">
+                      <label for="inptAddress">&star;&nbsp;Adress</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="inptAddress"
+                        name="customerAddress"
+                      />
+                    </div>
+                    <div class="form-group mb-3">
+                      <label for="inptContact">&star;&nbsp;Contact</label>
+                      <input
+                        type="number"
+                        class="form-control"
+                        id="inptContact"
+                        name="customerContact"
+                      />
+                    </div>
+                    <div class="form-group mb-3">
+                      <label for="inptLicNo">&star;&nbsp;Lic No</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="inptLicNo"
+                        name="customerLicNo"
+                      />
+                    </div>
+                    <div class="form-group mb-3">
+                      <label for="brwsLicImg">&star;&nbsp;Licence Image</label>
+                      <input
+                        type="file"
+                        class="form-control"
+                        id="brwsLicImg"
+                        name="customerLicImg"
+                      />
+                      <small id="brwsLicImg" class="form-text text-danger"
+                        >We'll never share your Licence image with anyone
+                        else.</small
+                      >
+                    </div>
+                    <div class="form-group mb-3">
+                      <label for="imgLic">&star;&nbsp;NIC image</label>
+                      <input
+                        type="file"
+                        class="form-control"
+                        id="imgNIC"
+                        name="customerNICimg"
+                      />
+                      <small id="imgNIC" class="form-text text-danger"
+                        >We'll never share your NIC image with anyone
+                        else.</small
+                      >
+                    </div>
+                    <br />
+                    <section class="sp-right-lower d-flex justify-content-end">
+                      <button
+                        class="btn btn-primary"
+                        id="btnSubmitRegistration"
+                      >
+                        REGISTER
+                      </button>
+                    </section>
+                  </form>
+                </section>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- registration modal end -->
+
+  <!-- login model start -->
+  <div
+    class="modal fade"
+    id="mdlLogin"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="signupModal"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-xl" role="document">
+      <div class="modal-content bg-success">
+        <section class="modal-header bg-success">
+          <h4 class="text-light">
+            <i class="vh-ico far fa-user-circle text-warning"></i>
+            USER LOGIN
+          </h4>
+        </section>
+        <div class="signup-model center">
+          <div class="login-model-mid center bg-light">
+            <div class="sp-mld-mid-left">
+              <section class="sp-lft-upper center">
+                <img
+                  src="./assets/images/off_road.svg"
+                  width="80%"
+                  alt=""
+                  id="imgSignup"
+                />
+              </section>
+              <section class="sp-lft-lower d-flex align-items-start center">
+                <h3 >Drive safe with us...</h3>
+              </section>
+            </div>
+            <div class="sp-mld-mid-right">
+              <section class="sp-right-upper center justify-content-start">
+                <section class="lgn-rght-md-form">
+                  <h1 class="display-6 text-center">LOGIN</h1>
+                  <hr>
+                  <form class="flex-column h-100 center" id="frmCustomerLogin">
+                    <br />
+                    <i class="fas fa-rocket display-6 text-primary"></i>
+
+                    <div class="form-group mb-3 w-75">
+                      <label for="inptUsername">&star;&nbsp;Username</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="inptUsername"
+                        name="customerUsername"
+                      />
+                      <small id="errUsername" class="form-text text-danger"
+                        ></small
+                      >
+                    </div>
+                    <div class="form-group mb-3 w-75">
+                      <label for="pwPassword">&star;&nbsp;Password</label>
+                      <input
+                        type="password"
+                        class="form-control"
+                        id="pwPassword"
+                        name="customerPassword"
+                      />
+                      <small id="errPassword" class="form-text text-danger"
+                        ></small
+                      >
+                    </div>
+                    <section>
+                      <Button class="btn btn-primary" id="btnLogin">LOGIN</Button>
+                    </section>
+                    </section>
+                  </form>
+                  <br>
+                  <h5 
+                  id="lblSignup"
+                  >Create new one ?</h5>
+                </section>
+              </section>
+              <hr>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- login model end -->
+
+  <!-- signup modal start -->
+  <div
+    class="modal fade"
+    id="mdlSignup"
+    tabindex="-1"
+    role="dialog"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-xl" role="document">
+      <div class="modal-content bg-danger">
+        <section class="modal-header bg-danger">
+          <h4 class="text-light">
+            <i class="vh-ico far fa-user-circle text-warning"></i>
+            USER SIGNUP
+          </h4>
+        </section>
+        <div class="signup-model center">
+          <div class="sgn-model-mid center bg-light">
+            <div class="sp-mld-mid-left">
+              <section class="sp-lft-upper center">
+                <img
+                  src="./assets/images/biking.svg"
+                  width="80%"
+                  alt=""
+                  id="imgSignup"
+                />
+              </section>
+              <section class="sp-lft-lower d-flex align-items-start center">
+                <h3>Drive safe with us...</h3>
+              </section>
+            </div>
+            <div class="sp-mld-mid-right">
+              <section class="sp-right-upper center justify-content-start">
+                <section class="lgn-rght-md-form">
+                  <h1 class="display-6 text-center">SIGNUP</h1>
+                  <hr>
+                  <form class="flex-column h-100 center" id="frmCustomerSignup">
+                    <br />
+                    <i class="fas fa-rocket display-6 text-primary"></i>
+
+                    <div class="form-group mb-3 w-75">
+                      <label for="inptSignNIC">&star;&nbsp;NIC number</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="inptSgnNIC"
+                        name="customerSgnNIC"
+                      />
+                      <small id="errSgnNIC" class="form-text text-white"
+                        ></small
+                      >
+                    </div>
+                    <div class="form-group mb-3 w-75">
+                      <label for="inptSgnUsername">&star;&nbsp;Username</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="inptSgnUsername"
+                        name="sgnUsername"
+                      />
+                    </div>
+                    <div class="form-group mb-3 w-75">
+                      <label for="inptSgnPassword">&star;&nbsp;password</label>
+                      <input
+                        type="password"
+                        class="form-control"
+                        id="inptSgnPassword"
+                        name="sgnPassword"
+                      />
+                    </div>
+           
+                    <section>
+                      <Button class="btn btn-primary" id="btnSignup">SIGNUP</Button>
+                    </section>
+                    </section>
+                  </form>
+                </section>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- signup modal end -->
+
+  <!-- booking modal start -->
+  <div
+  class="modal fade"
+  id="mdlBooking"
+  tabindex="-1"
+  role="dialog"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-xl" role="document">
+    <div class="modal-content bg-success">
+      <section class="modal-header bg-success">
+        <h4 class="text-light">
+          <i class="vh-ico far fa-user-circle text-warning"></i>
+          Booking Details
+        </h4>
+      </section>
+      <div class="booking-model center">
+        <div class="bkng-model-mid center bg-light">
+          <section class="justify-content-around">
+            <section>
+              <label for="chkDurationMonth" class="form-check-label">Month</label>
+              <input type="checkbox" id="chkDurationMonth" class="form-check" name="">
+            </section>
+            <section>       
+              <label for="chkDurationDay" class="form-check-label">Day</label>      
+              <input type="checkbox" class="form-check text-center" name="" id="chkDurationDay">
+            </section>
+          </section>
+          <section>
+            <section>
+              <label for="dtDepDate" class="form-check-label">Departure Date</label>
+              <input type="date" id="dtDepDate" class="form-check" name="">
+            </section>
+          </section>
+          <section>
+            <section>
+              <label for="dtArrDate" class="form-check-label">Arrival Date</label>
+              <input type="date"  id="dtArrDate" class="form-check" name="">
+            </section>
+          </section>
+          <section>
+            <section>
+              <label for="tmDepTime" class="form-check-label">Departure Time</label>
+              <input type="time" id="tmDepTime" class="form-check bg-danger" name="">
+            </section>
+          </section>
+          <section>
+            <section>
+              <button class="btn btn-primary" id="btnBookingSubmit">BOOK</button>
+            </section>
+          </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  <!-- booking modal end -->
+
+  <!-- user profile model start -->
+  <div
+  class="modal fade"
+  id="mdlUserProfile"
+  tabindex="-1"
+  role="dialog"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-xl" role="document">
+    <div class="modal-content bg-success">
+      <section class="modal-header bg-success">
+        <h4 class="text-light">
+          <i class="vh-ico far fa-user-circle text-warning"></i>
+          User Bookings
+        </h4>
+      </section>
+      <div class="user-model center bg-success">
+        <div class="user-model-mid center">
+          <div class="user-md-upper w-100 h-25 center">
+            <h1 class="display-6 text-dark">Customer Hold Bookings</h1>
+          </div>
+          <div class="user-md-lower w-100 h-75 ">
+            <table
+          class="table table-bordered table-hover user-booking-table table-secondary"
+        >
+          <thead>
+            <tr>
+              <th scope="col">Departure Date</th>
+              <th scope="col">Arrival Date</th>
+              <th scope="col">departure time</th>
+              <th scope="col">vehicle number</th>
+              <th scope="col">Cancel</th>
+            </tr>
+          </thead>
+          <tbody id="user-tbl-tbody"></tbody>
+        </table>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- user profile model end-->
+
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"
+  ></script>
+
+  <!-- jquery cookie scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+
+  <script src="./js/home.js"></script>
+</html>
