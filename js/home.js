@@ -2,12 +2,15 @@ let allVehicleArr = []
 let holdBookingArr = []
 let driver = ""
 
+let sliderShow = false
+
 let vehicleIndex = 0;
 
 $(document).ready(() => {
     checkValidUser()
     getAllVehicle()
     getBookingHoldsByUser()
+
 })
 ///////API calling////////////////
 function registerCustomer(tempData) {
@@ -32,11 +35,21 @@ function registerCustomer(tempData) {
             body: JSON.stringify(actualData)
         })
         await rawResponse.json().then(data => {
-            alert(data.body)
+
+            if (data.title != "error")
+                swal({
+                    title: data.title,
+                    text: "You successfully registered",
+                    icon: "success",
+                });
+            else swal({
+                title: data.body,
+                text: `${data.data}`,
+                icon: "error",
+            });
         })
     })().then(() => {
         cleanRegistration()
-        alert("success !!!")
     });
 }
 
@@ -53,7 +66,11 @@ function signupUser(data) {
         })
         await rawResponse.json().then(data => {
 
-            alert(data.data)
+            swal({
+                title: data.body,
+                text: "You are a member of rocketman familly now",
+                icon: "success",
+            });
         })
     })().then(() => {
         cleanSignUp()
@@ -74,7 +91,11 @@ function loginUser(data) {
             if (null !== data.data)
                 setValidCookie(data);
             else
-                alert("no user found")
+                swal({
+                    title: data.body,
+                    text: "no user found",
+                    icon: "error",
+                });
         })
     })().then(() => {
         cleanLogIn()
@@ -131,8 +152,16 @@ function placeBooking(data) {
         })
         await rawResponse.json().then((data) => {
             if (data.data)
-                alert("Success")
-            else alert("Failed")
+                swal({
+                    title: data.body,
+                    text: `Your bookingID: ${data.data.bookingID}`,
+                    icon: "success",
+                });
+            else swal({
+                title: data.body,
+                text: `Booking failed`,
+                icon: "error",
+            });
         })
     })().then(() => {
         getBookingHoldsByUser()
@@ -148,10 +177,13 @@ function deleteHoldBooking(index) {
                 "accept": "application/json",
             },
         })
-        await rawResponse.json().then((data) => {
-            alert(data.data)
-        })
+        await rawResponse.json()
     })().then(() => {
+        swal({
+            title: data.body,
+            text: `Successfully deleted`,
+            icon: "success",
+        });
         cleanHoldBookingTable()
         getBookingHoldsByUser()
     })
@@ -252,7 +284,21 @@ $("#btnLogin").on('click', () => {
 })
 
 $("#btnLogOut").on('click', () => {
-    logOut();
+    swal("A wild Pikachu appeared! What do you want to do?", {
+        buttons: {
+            Yes: "YES",
+        },
+    })
+        .then((value) => {
+            console.log(value);
+            switch (value) {
+                case "Yes":
+                    logOut();
+                    break;
+                default:
+                    break
+            }
+        });
 })
 
 $("#frmCustomerRegistration").on('submit', e => {
@@ -294,7 +340,11 @@ $("#chkDurationDay").on("click", () => {
 $("#btnBookingSubmit").on('click', () => {
 
     if (!cookieChecker()) {
-        alert("You have to login to make a booking")
+        swal({
+            title: "Warning",
+            text: `First you need to Signin`,
+            icon: "warning",
+        });
         return;
     }
 
@@ -409,6 +459,7 @@ function setValidCookie(data) {
 }
 
 function logOut() {
+
     Cookies.remove("or_user")
     window.location.reload()
 
