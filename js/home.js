@@ -16,25 +16,18 @@ $(document).ready(() => {
 function registerCustomer(tempData) {
 
     (async () => {
-        const actualData = {
-            "customer_NIC": tempData.NIC,
-            "nic_img": "buddini.jpeg",
-            "lic_no": tempData.lic,
-            "lic_img": "",
-            "customerName": tempData.name,
-            "contact": tempData.contact,
-            "address": tempData.address,
-            "customerStatus": "open"
-        }
         const rawResponse = await fetch("http://localhost:8080/rocketman_war/customer/add", {
             method: "POST",
             headers: {
                 "accept": "application/json",
                 "Content-type": "application/json"
             },
-            body: JSON.stringify(actualData)
+            body: JSON.stringify(tempData)
         })
         await rawResponse.json().then(data => {
+
+            console.log(data);
+            console.log(tempData);
 
             if (data.title != "error")
                 swal({
@@ -186,6 +179,63 @@ function deleteHoldBooking(index) {
         });
         cleanHoldBookingTable()
         getBookingHoldsByUser()
+    })
+}
+
+
+function registerCustomerWithImages(tempData) {
+
+    const actualData = {
+        "customer_NIC": tempData.NIC,
+        "nic_img": "",
+        "lic_no": tempData.lic,
+        "lic_img": "",
+        "customerName": tempData.name,
+        "contact": tempData.contact,
+        "address": tempData.address,
+        "customerStatus": "open"
+    }
+
+    const fileNIC = $("#brwsLicImg")[0].files[0]
+    const fileNICName = $("#brwsLicImg")[0].files[0].name
+
+    const fileLIC = $("#imgNIC")[0].files[0]
+    const fileLICName = $("#imgNIC")[0].files[0].name
+
+    const nicData = new FormData()
+    const licData = new FormData()
+
+    nicData.append("file", fileNIC, fileNICName)
+    licData.append("file", fileLIC, fileLICName)
+
+    $.ajax({
+        type: "POST",
+        async: true,
+        processData: false,
+        contentType: false,
+        data: licData,
+        url: "http://localhost:8080/rocketman_war/customer/lic-img",
+        xhrFields: false,
+        success: function (data) {
+            if (data.body != "error") {
+                actualData.lic_img = data.data
+                $.ajax({
+                    type: "POST",
+                    async: true,
+                    processData: false,
+                    contentType: false,
+                    data: nicData,
+                    url: "http://localhost:8080/rocketman_war/customer/nic-img",
+                    xhrFields: false,
+                    success: function (data) {
+                        if (data.body != "error") {
+                            actualData.nic_img = data.data
+                            registerCustomer(actualData)
+                        }
+                    }
+                })
+            }
+        }
     })
 }
 ////////rendering//////////////////
@@ -389,11 +439,8 @@ function bookingDataMaker(data) {
         "bookingType": dataArr.type,
         "bookingDate": ""
     }
-
     placeBooking(bookingData)
-
 }
-
 
 function fetchDetailsFromRegistration() {
     const customerNIC = $("#inptCustomerNIC").val()
@@ -403,6 +450,8 @@ function fetchDetailsFromRegistration() {
     const customerContact = $("#inptContact").val()
     const customerLicNo = $("#inptLicNo").val()
 
+    console.log($("#brwsLicImg").val());
+
     const data = {
         "NIC": customerNIC,
         "name": customerName,
@@ -410,7 +459,7 @@ function fetchDetailsFromRegistration() {
         "contact": customerContact,
         "lic": customerLicNo
     }
-    registerCustomer(data)
+    registerCustomerWithImages(data)
 }
 
 function fetchDetailsSignup() {
